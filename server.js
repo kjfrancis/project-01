@@ -21,11 +21,6 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/elephant', function homepage(req, res) {
-  console.log(__dirname);
-  res.sendFile(__dirname + '/views/elephant.html');
-});
-
 
 // TODO: Make 'api/sanity' endpoint!
 

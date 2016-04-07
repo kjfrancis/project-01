@@ -5,14 +5,17 @@
 
 $(document).ready(function() {
   // make an ajax call to my server
-  $('#colorQuery').on('click', function clickHandler(){
+  $('#add').on('click', function clickHandler(){
     $.ajax({
       method: "GET",
       url: "api/primary",
       success: sanitySuccess,
       error: sanityError
     });
+  var addItem = function () {
+    add.text("");
 
+  };
   });
 
 
@@ -24,15 +27,16 @@ function sanitySuccess(success) {
   console.log("YOU DID IT! SUCCESS!");
   console.log(success);
   var allPrimaries = success;
-  // traverse all of my db entries and append each entry's favorite color to my #colorAnswer div
-  allPrimaries.forEach( function appendToHtml(onePrimary) {
-    var faveColor = onePrimary.favoriteColor
-    $('#colorAnswer').append('<h1>' + faveColor + '</h1>')
-  })
 }
+  // traverse all of my db entries and append each entry's favorite color to my #colorAnswer div
 
 
 function sanityError(error) {
   console.log("DAMNIT! ERROR!!!");
   console.log(error);
 }
+
+$ ('#add').on('click', function () {
+  console.log("Button got clicked");
+  
+});
