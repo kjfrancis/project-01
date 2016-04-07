@@ -1,3 +1,11 @@
 body {
   background-color: lightblue;
 }
+#f1 {
+  border: none;
+  display: list-item;
+}
+#f2 {
+  border: none;
+  display: list-item;
+}

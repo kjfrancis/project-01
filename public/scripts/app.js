@@ -12,9 +12,17 @@ $(document).ready(function() {
       success: sanitySuccess,
       error: sanityError
     });
+
+  $('#total').on('click', function clickHandler(){
+    $.ajax({
+      method: "GET",
+      url: "api/primary",
+      success: sanitySuccess,
+      error: sanityError
+    });
+
   var addItem = function () {
     add.text("");
-
   };
   });
 
@@ -35,8 +43,4 @@ function sanityError(error) {
   console.log("DAMNIT! ERROR!!!");
   console.log(error);
 }
-
-$ ('#add').on('click', function () {
-  console.log("Button got clicked");
-  
 });
