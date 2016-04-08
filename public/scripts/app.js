@@ -5,20 +5,25 @@
 
 $(document).ready(function() {
   // make an ajax call to my server
-  $('#add').on('click', function clickHandler(){
+  $('#add').on('click', function clickHandler(e){
+    e.preventDefault();
     $.ajax({
-      method: "GET",
-      url: "api/primary",
-      success: sanitySuccess,
-      error: sanityError
+      method: "POST",
+      url: "",
+      data: $('#f1').serialize(),
+      success: ,
+      error:
     });
 
-  $('#total').on('click', function clickHandler(){
-    $.ajax({
-      method: "GET",
-      url: "api/primary",
-      success: sanitySuccess,
-      error: sanityError
+  $('#total').on('click', function handleClick(){
+      console.log("woo hoo!!! I did something right!", formData);
+      $.ajax({
+        method: "POST",
+        url: "",
+
+        success: ,
+        error:
+      });
     });
 
   var addItem = function () {
@@ -31,8 +36,8 @@ $(document).ready(function() {
 });
 
 // these are being loaded when this app.js is executed
-function sanitySuccess(success) {
-  console.log("YOU DID IT! SUCCESS!");
+function sanitySuccess(res.json) {
+  console.log("YOU DID IT! SUCCESS!", formData);
   console.log(success);
   var allPrimaries = success;
 }
@@ -43,4 +48,3 @@ function sanityError(error) {
   console.log("DAMNIT! ERROR!!!");
   console.log(error);
 }
-});
