@@ -5,7 +5,8 @@ var PrimarySchema = new Schema({
   truckname: String,
   location: String,
   contactname: String,
-  phonenumber: Number
+  phonenumber: Number,
+  items: [Secondary.schema]
 });
 
 var Primary = mongoose.model('Primary', PrimarySchema);
