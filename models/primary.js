@@ -6,7 +6,7 @@ var PrimarySchema = new Schema({
   location: String,
   contactname: String,
   phonenumber: Number,
-  items: [Secondary.schema]
+  items: [ String ]
 });
 
 var Primary = mongoose.model('Primary', PrimarySchema);
