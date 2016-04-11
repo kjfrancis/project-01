@@ -42,10 +42,10 @@ app.get('/api/orders', function sanity(req, res) {
 
   database.Primary.find( {}, function getAllPrimaries(err, allPrimaries){
     if (err) { return console.log('ERROR', err); }
-
     res.json(allPrimaries);
   });
 });
+
 // Creating an Order
 app.post('/api/orders', function(req,res){
   console.log('creating an order');
@@ -62,7 +62,13 @@ app.post('/api/orders/:orders_id/items', function sanity(req, res) {
   });
 });
 
-/*   app.create('/api/orders/')  */
+// Creating an Item to Order
+    app.post('/api/orders/:order_id/items', function(req, res){
+        console.log('creating an order');
+        console.log(req.body);
+        var data = req.body;
+        res.json();
+});
 
 // Getting one item
 app.get('/api/orders/:orders_id/items/:item_id', function(req, res){
