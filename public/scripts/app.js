@@ -10,23 +10,12 @@ $(document).ready(function() {
   /*  e.preventDefault();    */
       $.ajax({
         method: "GET",
-        url: ('/api'),
+        url: ('/api/primary'),
         data: $('#f1').serialize(),
         success: sanitySuccess,
       });
     });
 
-/*
-    $('#add').on('click', function clickHandler(e){
-      e.preventDefault();
-        $.ajax({
-          method: "GET",
-          url: ('/api'),
-          data: $('#f1').serialize(),
-          success: ppp,
-          error: err
-        });
-*/
 
 /*  $('#total').on('click', function handleClick(){
       console.log("woo hoo!!! I did something right!", formData);
@@ -40,10 +29,8 @@ $(document).ready(function() {
 // these are being loaded when this app.js is executed
 function sanitySuccess(pleaseWork){
   console.log("YOU DID IT! SUCCESS!", formData);
-  console.log(success);
-  var allPrimaries = success;
+  var formData = ('#f1');
 }
-  // traverse all of my db entries and append each entry's favorite color to my #colorAnswer div
 
 
 function sanityError(error) {

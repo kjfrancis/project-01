@@ -4,6 +4,15 @@ var express = require('express');
 var database = require('./models');
 var app = express();
 
+var products = [
+  {
+    name: 'Billy Bob Jenkins III',
+    address: '1313 Mockingbird Lane',
+    hobbies: 'Roadkill Taxidermy',
+  }
+];
+
+
 var bodyParser = require('body-parser');
   app.use(bodyParser.urlencoded({extended: true}));
 // serve static files from public folder
