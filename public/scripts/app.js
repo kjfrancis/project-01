@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 
   $('#total').on('click', function handleClick(){
-    console.log("woo hoo!!! I did something right!", formEntry);
+    console.log("woo hoo!!! I did something right!", $('#f2').serialize());
       $.ajax({
         method: "POST",
         url: ('/api/orders/'),
@@ -41,7 +41,7 @@ function sanitySuccess(pleaseWork){
   var formData = ('#f1');
 }
 
-function success2(pleaseWork){
+function success2(goodthings){
   console.log("YOU DID IT! SUCCESS!", formEntry);
   var formEntry = ('#f2');
 }
