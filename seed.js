@@ -14,4 +14,3 @@ db.Primary.create( primaryObject, function(err, successfulPrimary){
     console.log("success! it works!", successfulPrimary);
     process.exit();
   });
-});

@@ -38,7 +38,7 @@ app.get('/', function homepage(req, res) {
  * API ENDPOINTS
  */
 /* GET ALL Primary DB Entries */
-app.get('/api/primary', function sanity(req, res) {
+app.get('/api/orders', function sanity(req, res) {
 
   database.Primary.find( {}, function getAllPrimaries(err, allPrimaries){
     if (err) { return console.log('ERROR', err); }
@@ -53,6 +53,16 @@ app.post('/api/orders', function(req,res){
   var data = req.body;
   res.json();
 });
+
+app.post('/api/orders/:orders_id/items', function sanity(req, res) {
+  console.log(req.body);
+  database.Primary.find( {}, function getAllPrimaries(err, allPrimaries){
+    if (err) { return console.log('ERROR', err); }
+    res.json(allPrimaries);
+  });
+});
+
+/*   app.create('/api/orders/')  */
 
 // Getting one item
 app.get('/api/orders/:orders_id/items/:item_id', function(req, res){
